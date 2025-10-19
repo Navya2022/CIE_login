@@ -1,9 +1,9 @@
 # ...existing code...
 from flask import Flask, render_template, request, redirect, url_for, flash, session
+import os
 
 app = Flask(__name__, template_folder='../templates', static_folder='../static')
-app.secret_key = 'd2da97c6cdace937b06cce8cf5f997771fbc68eb636ae5c16512cfc4e64c6b33'  # Change this to a random secret key
-
+app.secret_key = os.getenv("SECRET_KEY", "fallback_key")
 # Dummy user data for demonstration purposes
 users = {
     "user@example.com": "password123",
