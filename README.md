@@ -5,23 +5,25 @@ This project is a simple login page built using Python Flask, designed to be hos
 ## Project Structure
 
 ```
-flask-login-vercel
-├── api
-│   └── index.py          # Main backend script for the Flask application
-├── templates
-│   └── login.html        # HTML structure for the login page
-├── static
-│   ├── css
-│   │   └── styles.css     # CSS styles for the login page
-│   └── js
-│       └── app.js         # JavaScript for client-side functionality
-├── tests
-│   └── test_auth.py       # Unit tests for authentication functionality
-├── .gitignore              # Files and directories to be ignored by Git
-├── requirements.txt        # List of dependencies required for the project
-├── runtime.txt             # Python version for the Vercel environment
-├── vercel.json             # Configuration settings for Vercel deployment
-└── README.md               # Documentation for the project
+flask-login-vercel/
+├── api/
+│   ├── index.py          # Main backend Flask script (Vercel Serverless Function)
+│   ├── templates/
+│   │   ├── login.html    # HTML structure for login page
+│   │   └── dashboard.html
+│   └── static/
+│       ├── css/
+│       │   └── styles.css
+│       └── js/
+│           └── app.js
+├── tests/
+│   └── test_auth.py      # Unit tests for authentication
+├── .gitignore
+├── requirements.txt      # Dependencies
+├── runtime.txt           # Python version for Vercel (e.g., python-3.11)
+├── vercel.json           # Vercel deployment configuration
+└── README.md
+
 ```
 
 ## Setup Instructions
@@ -65,4 +67,10 @@ pytest tests/test_auth.py
 
 ## Deployment
 
-Follow the instructions on Vercel to deploy the application. Ensure that the `runtime.txt` and `vercel.json` files are correctly configured for your environment.
+## Deployment
+
+The application is deployed on Vercel and can be accessed at:
+https://cie-login.vercel.app/ 
+
+- The login page is available at the root URL `/`.
+- Ensure you are using compatible browsers for proper rendering of the login dashboard.
