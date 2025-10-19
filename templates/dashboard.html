@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+  <main class="center">
+    <section class="card dashboard">
+      <header class="dashboard-header">
+        <div class="avatar">{{ user.split('@')[0][:1] | upper }}</div>
+        <div class="welcome">
+          <h2>Welcome back,</h2>
+          <p class="user-email">{{ user }}</p>
+        </div>
+
+        <form action="{{ url_for('logout') }}" method="post" class="logout-form">
+          <button class="btn small" type="submit">Logout</button>
+        </form>
+      </header>
+
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          <div class="flashes">
+            {% for category, msg in messages %}
+              <div class="alert {{ category }}">{{ msg }}</div>
+            {% endfor %}
+          </div>
+        {% endif %}
+      {% endwith %}
+
+      <div class="dashboard-body">
+        <div class="panel">
+          <h3>Account</h3>
+          <p class="muted">Basic demo account. Replace with real user data.</p>
+          <ul class="info-list">
+            <li><strong>Email</strong><span>{{ user }}</span></li>
+            <li><strong>Plan</strong><span>Demo</span></li>
+            <li><strong>Member since</strong><span>—</span></li>
+          </ul>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat">
+            <div class="stat-value">3</div>
+            <div class="stat-label">Active sessions</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">0</div>
+            <div class="stat-label">Notifications</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">—</div>
+            <div class="stat-label">Usage</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

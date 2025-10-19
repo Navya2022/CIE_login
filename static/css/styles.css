@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+:root{
+  --bg1:#6a11cb;
+  --bg2:#2575fc;
+  --card-bg: rgba(255,255,255,0.96);
+  --muted:#6b7280;
+  --accent-start:#6a11cb;
+  --accent-end:#2575fc;
+  --success:#10b981;
+  --danger:#ef4444;
+  --warning:#f59e0b;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:linear-gradient(135deg,var(--bg1),var(--bg2));-webkit-font-smoothing:antialiased;color:#0f172a}
+
+.center{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+
+.card{
+  width:380px;max-width:100%;background:var(--card-bg);border-radius:14px;padding:28px;box-shadow:0 10px 30px rgba(2,6,23,0.35);
+  display:flex;flex-direction:column;gap:18px;
+}
+
+/* brand */
+.brand{display:flex;flex-direction:column;align-items:center;text-align:center}
+.logo{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,var(--accent-start),var(--accent-end));display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:20px;margin-bottom:10px;box-shadow:0 6px 18px rgba(10,10,50,0.2)}
+h1{margin:0;font-size:20px}
+.muted{color:var(--muted);font-size:13px;margin-top:6px}
+
+/* flashes */
+.flashes{display:flex;flex-direction:column;gap:8px;margin:0 0 4px 0}
+.alert{padding:10px 12px;border-radius:8px;font-size:13px;color:white}
+.alert.success{background:var(--success)}
+.alert.danger{background:var(--danger)}
+.alert.warning{background:var(--warning)}
+.alert.info{background:#3b82f6}
+
+/* form */
+.form{display:flex;flex-direction:column;gap:12px;margin-top:4px}
+.field{display:block}
+.label{display:block;font-size:12px;color:var(--muted);margin-bottom:6px}
+input[type="email"],input[type="password"]{
+  width:100%;padding:12px 14px;border-radius:10px;border:1px solid rgba(15,23,42,0.06);background:transparent;font-size:14px;outline:none;
+  box-shadow:inset 0 -1px 0 rgba(2,6,23,0.03);
+}
+input:focus{border-color:rgba(37,117,252,0.9);box-shadow:0 6px 18px rgba(37,117,252,0.08)}
+
+.btn{
+  margin-top:6px;background:linear-gradient(90deg,var(--accent-start),var(--accent-end));color:#fff;border:none;padding:12px;border-radius:10px;font-weight:600;cursor:pointer;font-size:15px;
+  box-shadow:0 8px 20px rgba(37,117,252,0.18);transition:transform .12s ease,box-shadow .12s ease;
+}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(37,117,252,0.22)}
+
+/* footer */
+.foot{display:flex;justify-content:center;margin-top:6px}
+.foot .muted{font-size:12px}
+
+/* responsive */
+@media (max-width:420px){
+  .card{padding:18px}
+  .logo{width:52px;height:52px}
+}
+
+
+/* dashboard specific styles */
+.dashboard-header{display:flex;align-items:center;gap:14px;border-bottom:1px solid rgba(15,23,42,0.04);padding-bottom:12px}
+.avatar{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent-start),var(--accent-end));display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:20px;box-shadow:0 6px 18px rgba(10,10,50,0.12)}
+.welcome h2{margin:0;font-size:16px}
+.user-email{margin:2px 0 0;color:var(--muted);font-size:13px}
+.logout-form{margin-left:auto}
+
+/* small button variant */
+.btn.small{padding:8px 10px;font-size:13px;border-radius:8px}
+
+/* dashboard body */
+.dashboard-body{display:flex;flex-direction:column;gap:14px;margin-top:12px}
+.panel{background:linear-gradient(180deg,rgba(255,255,255,0.99),rgba(255,255,255,0.96));padding:12px;border-radius:10px}
+.info-list{list-style:none;padding:0;margin:8px 0 0 0}
+.info-list li{display:flex;justify-content:space-between;padding:8px 0;border-top:1px dashed rgba(15,23,42,0.03);font-size:14px}
+.info-list li:first-child{border-top:none;padding-top:0}
+
+/* stats grid */
+.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.stat{background:rgba(15,23,42,0.03);padding:12px;border-radius:10px;text-align:center}
+.stat-value{font-weight:700;font-size:18px}
+.stat-label{font-size:12px;color:var(--muted);margin-top:6px}
+
+/* responsive adjustments */
+@media (max-width:420px){
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .avatar{width:48px;height:48px}
+}
