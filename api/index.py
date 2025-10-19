@@ -2,7 +2,7 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, session
 
 app = Flask(__name__, template_folder='../templates', static_folder='../static')
-app.secret_key = 'your_secret_key'  # Change this to a random secret key
+app.secret_key = 'd2da97c6cdace937b06cce8cf5f997771fbc68eb636ae5c16512cfc4e64c6b33'  # Change this to a random secret key
 
 # Dummy user data for demonstration purposes
 users = {
